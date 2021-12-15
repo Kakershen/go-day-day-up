@@ -10,5 +10,6 @@ type person struct {
 }
 
 func main() {
-	sliceAppend()
+	readParamFromCmd()
+
 }

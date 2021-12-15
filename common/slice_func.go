@@ -29,3 +29,27 @@ func sliceAppend() {
 	s1 = append(s1, 1)
 	fmt.Printf("s1 = %v, s1内存地址 = %p, len = %d, cap = %d \n", s1, &s1, len(s1), cap(s1))
 }
+
+func slice_output() {
+	slice := []int{0, 1, 2, 3}
+	m := make(map[int]*int)
+
+	for key, value := range slice {
+		fmt.Printf("key=%v, value=%v \n", key, value)
+		m[key] = &value
+	}
+
+	fmt.Println(*m[0])
+	fmt.Println(*m[1])
+	fmt.Println(*m[2])
+	fmt.Println(*m[3])
+
+	scene := make(map[string]int)
+	scene["route"] = 66
+	scene["brazil"] = 4
+	scene["china"] = 960
+	for k, v := range scene {
+		fmt.Println(k, v)
+		fmt.Printf("v的地址 = %v \n", &v)
+	}
+}
